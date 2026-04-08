@@ -2,7 +2,7 @@
 set -e
 mkdir -p /var/state/ups
 chown -R nut:nut /var/state/ups
-chmod 770 /var/state/ups
+chmod 777 /var/state/ups
 echo "Starting NUT..."
 
 echo "Starting driver..."
