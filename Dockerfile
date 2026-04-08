@@ -3,7 +3,7 @@ FROM debian:bookworm-slim
 # Install dependencies
 RUN apt-get update && apt-get install -y \
     git build-essential autoconf automake libtool pkg-config \
-    libusb-1.0-0-dev libssl-dev \
+    libusb-1.0-0-dev libssl-dev python3-full\
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /build
@@ -32,7 +32,7 @@ RUN ./autogen.sh && \
 # Runtime setup
 RUN useradd -r -s /bin/false nut
 
-# Copy configs (you mount these later)
+# Copy configs
 VOLUME ["/etc/nut"]
 
 EXPOSE 3493
