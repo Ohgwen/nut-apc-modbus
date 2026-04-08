@@ -3,8 +3,6 @@ set -e
 
 echo "Starting NUT..."
 
-chown -R nut:nut /run/nut
-
 echo "Starting driver..."
 upsdrvctl start
 
