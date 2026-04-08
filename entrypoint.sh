@@ -1,11 +1,9 @@
+#!/usr/bin/env bash
+set -e
+
 echo "Starting NUT..."
 
-# Ensure runtime dir exists
-mkdir -p /run/nut
 chown -R nut:nut /run/nut
-
-# Wait for USB (critical for apc_modbus)
-sleep 5
 
 echo "Starting driver..."
 upsdrvctl start
