@@ -32,10 +32,6 @@ RUN ./autogen.sh && \
 # Runtime setup
 RUN useradd -r -s /bin/false nut
 
-RUN mkdir -p /var/state/ups && \
-    chown -R nut:nut /var/state/ups && \
-    chmod 770 /var/state/ups
-
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
